@@ -2,7 +2,8 @@ module.exports = function() {
 	this.words = ["chromium", "manganese", "tungsten", "molybdenum", "rubidium", "xenon", "potassium", "fluorine", "antimony", "hydrogen", "nitrogen", "zirconium", "thorium", "arsenic", "selenium", "bismuth", "polonium", "neptunium", "plutonium", "platinum", "iridium"],
 	this.word = "",
 	this.hiddenWord = "",
-	this.guesses = +10,
+	this.guesses = 10,
+	this.win,
 
 	this.getWord  = function() {
 		var randNum = Math.floor(Math.random() * 22);
@@ -22,13 +23,14 @@ module.exports = function() {
 	},
 
 	this.checkWord = function() {
-		win = true;
-			for(i=0; i < hide.length; i++){
-				if (hide[i] == "-") {
-					win = false;	
+			this.win = true;
+			for(var i = 0; i < this.hiddenWord.length; i++){
+				
+				if (this.hiddenWord[i] == "-") {
+					this.win = false;	
 			    }
 			}
-			return win;
-		}
-	
+			return this.win;
 	}
+	
+}

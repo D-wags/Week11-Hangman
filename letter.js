@@ -2,16 +2,17 @@ module.exports = function(letter, word) {
 	this.guessed = [],
 	this.letter = letter,
 
-	this.showLetter = function(word) {
+	this.showLetter = function(word, hiddenWord) {
 		userGuessIndex = word.indexOf(this.letter);
-		var hide = word;
-		for (i=0; i < word.length; i++) {
-			if (word[i] === this.letter) {
-				hide = hide.split("");
-				hide[i] = userGuess;
-				hide = hide.join("");
+		for (var i = 0; i < word.length; i++) {
+			if (word[i] == this.letter) {
+				hiddenWord = hiddenWord.split("");
+				hiddenWord[i] = word[i];
+				hiddenWord = hiddenWord.join("");
 
 			}
-		}	
+		}
+			return hiddenWord;
+			
 	}
 }

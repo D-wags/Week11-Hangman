@@ -3,46 +3,52 @@ var Letter = require('./letter.js');
 var inquirer = require('inquirer');
 
 var letterGuess;
-var chances = true;
 
+
+var startGame = new Word();
 startGame.getWord();
 startGame.hideWord();
 
 
 function playGame() {
-	var startGame = new Word();
 	
-	while (chances = true) {
+	// while (chances = true) {
 
 		inquirer.prompt([
+
 		{
 			name: "guess",
 			message: "Guess a letter: "
 		}
+
 		]).then(function(guess) {
-			startGame.guesses -= 1;
-			// here you must check letter!!
-			var newLetter = new Letter(guess.name);
+
 			
+			console.log("hiddenWord is currently: " + startGame.hiddenWord);
+			
+
+			var newLetter = new Letter(guess.guess);
+			// console.log(newLetter.letter);
+			// console.log(startGame.hiddenWord);
+			startGame.hiddenWord = newLetter.showLetter(startGame.word, startGame.hiddenWord);
+			// console.log(startGame.hiddenWord);
+
 			if (startGame.checkWord() == true) {
 				console.log("You Win!!");
-				chances = false;
-				break;
 			}
 
 			else if (startGame.guesses == 0) {
-				var letter = guess.name;
-				chances = false;
 				console.log("You Lose!");
-				break;
 			}
 
 			else {
+				console.log("2");
 				playGame();
 
 			} 
-		}
-	}
+			startGame.guesses -= 1;
+		});
+	// }
 
 }
 
