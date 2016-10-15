@@ -1,7 +1,9 @@
+// letter object code
 module.exports = function(letter, word) {
-	this.guessed = [],
+	
 	this.letter = letter,
 
+	// shows correctly guessed letter
 	this.showLetter = function(word, hiddenWord) {
 		userGuessIndex = word.indexOf(this.letter);
 		for (var i = 0; i < word.length; i++) {
@@ -15,4 +17,5 @@ module.exports = function(letter, word) {
 			return hiddenWord;
 			
 	}
+
 }
