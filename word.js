@@ -15,7 +15,7 @@ module.exports = function() {
 		return this.word;
 	},
 
-	// hides letters of word
+	// hides letters of element word
 	this.hideWord = function() {
 		var hide = '';
 			for(var i = 0; i < this.word.length; i++) {

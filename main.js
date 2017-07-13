@@ -7,7 +7,7 @@ var letterGuess;
 
 console.log("");
 console.log("----------------------------------------------------");
-console.log("YOU ARE PLAYING PERIODIC TABLE HANGMAN NOW SUCKA!!!");
+console.log("YOU ARE PLAYING PERIODIC TABLE HANGMAN NOW!!!");
 console.log("----------------------------------------------------");
 console.log("");
 

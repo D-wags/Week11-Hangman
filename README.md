@@ -1,1 +1,2 @@
-# Week11-Hangman
+#Hangman
+javascript hangman game

@@ -3,7 +3,7 @@ module.exports = function(letter, word) {
 	
 	this.letter = letter,
 
-	// shows correctly guessed letter
+	// shows correctly guessed letter in element word
 	this.showLetter = function(word, hiddenWord) {
 		userGuessIndex = word.indexOf(this.letter);
 		for (var i = 0; i < word.length; i++) {
